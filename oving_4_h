@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Sep 24 12:43:04 2023
+
+@author: Diego
+"""
+
+from data_4 import temperaturer
+
+def plant_growth_positiv(temperaturer):
+    plant_hp=0
+    for celsius in temperaturer:
+        if celsius > 5:
+            plant_hp += celsius-5
+        else:
+            continue
+    return plant_hp
+
+def plant_growth(temperaturer):
+    plant_hp=0
+    plant_alive = True
+    for celsius in temperaturer:
+        if celsius > 5:
+            plant_hp += celsius-5
+        elif celsius <= 5 and celsius >=0:
+            continue
+        else:
+            plant_hp += celsius
+            if plant_hp <= 0:
+                plant_alive = False
+            else:
+                continue
+    if plant_alive == True:
+        return plant_hp
+    else:
+        return plant_hp,"men planten døde."
+
+print(plant_growth_positiv(temperaturer))
+print(plant_growth(temperaturer))
