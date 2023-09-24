@@ -34,6 +34,20 @@ def plant_growth(temperaturer):
         return plant_hp
     else:
         return plant_hp,"men planten døde."
+    
+"""def max_growth(temperaturer):
+    max_sofar = temperaturer[0]
+    max_current = 0
+    
+    for i in range(0,len(temperaturer)):
+        max_current = max_sofar + temperaturer[i]
+        if max_current < 0:
+            max_current = 0
+        elif (max_sofar < max_current):
+            max_sofar = max_current
+    
+    return max_current"""
 
 print(plant_growth_positiv(temperaturer))
 print(plant_growth(temperaturer))
+#print(max_growth(temperaturer))
